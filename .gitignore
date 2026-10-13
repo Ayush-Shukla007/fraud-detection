@@ -1,0 +1,84 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+**/venv/
+**/.venv/
+ENV/
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Environment
+.env
+*.env
+*.env.local
+*.env.production
+!*.env.example
+
+# ML Models (large binary files - exclude from git)
+ml/model.joblib
+ml/scaler.joblib
+# Keep metrics.json and features.json in git
+# ml/metrics.json
+# ml/features.json
+
+# Data files (too large for git)
+data/creditcard.csv
+data/*.csv
+data/*.zip
+*.zip
+# Keep demo generator and sample data
+!data/README.md
+!data/demo_transactions.csv
+
+# Database
+backend/fraudguard.db
+backend/*.db
+*.sqlite
+*.sqlite3
+
+# Node.js
+node_modules/
+**/node_modules/
+frontend/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+
+# Build output
+frontend/dist/
+frontend/build/
+.vite/
+
+# IDE
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Test coverage
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# OS
+.DS_Store
+desktop.ini
