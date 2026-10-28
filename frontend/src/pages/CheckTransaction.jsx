@@ -343,13 +343,13 @@ export default function CheckTransaction() {
               {/* Sample Buttons */}
               <div className="flex gap-8 mb-16">
                 <button type="button" className="btn btn-outline btn-sm" onClick={() => fillSample('legitimate')}>
-                  📥 Load Legitimate Sample
+                  Load Legitimate Sample
                 </button>
                 <button type="button" className="btn btn-outline btn-sm" onClick={() => fillSample('fraud')}>
-                  📥 Load Fraud Sample
+                  Load Fraud Sample
                 </button>
                 <button type="button" className="btn btn-outline btn-sm" onClick={() => { setForm(initialForm); setErrors({}); setResult(null); }}>
-                   Clear
+                  Clear
                 </button>
               </div>
 
@@ -390,15 +390,30 @@ export default function CheckTransaction() {
         {/* ── Result Panel ── */}
         <div>
           {/* Help Card */}
-          <Card title="📖 How It Works" className="mb-16" style={{ marginBottom: 20 }}>
+          <Card title="How It Works" className="mb-16" style={{ marginBottom: 20 }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
               {[
-                { icon: '1️⃣', title: 'Enter Features', desc: 'Fill in the transaction amount, time, and PCA-transformed V1–V28 features.' },
-                { icon: '2️⃣', title: 'Analyze',        desc: 'The ML model (trained on 284,807 real transactions) scores the transaction.' },
-                { icon: '3️⃣', title: 'Review Result',  desc: 'View the prediction, fraud probability, and risk level assessment.' },
+                { num: '1', title: 'Enter Features', desc: 'Fill in the transaction amount, time, and PCA-transformed V1–V28 features.' },
+                { num: '2', title: 'Analyze',        desc: 'The ML model (trained on 284,807 real transactions) scores the transaction.' },
+                { num: '3', title: 'Review Result',  desc: 'View the prediction, fraud probability, and risk level assessment.' },
               ].map((step) => (
-                <div key={step.icon} className="flex gap-12">
-                  <span style={{ fontSize: 18, flexShrink: 0 }}>{step.icon}</span>
+                <div key={step.num} className="flex gap-12" style={{ alignItems: 'flex-start' }}>
+                  <span style={{ 
+                    width: 22, 
+                    height: 22, 
+                    borderRadius: '50%', 
+                    background: 'var(--bg-secondary)', 
+                    border: '1px solid var(--border)',
+                    fontSize: 12, 
+                    fontWeight: 600,
+                    display: 'flex', 
+                    alignItems: 'center', 
+                    justifyContent: 'center', 
+                    flexShrink: 0,
+                    color: 'var(--text-secondary)'
+                  }}>
+                    {step.num}
+                  </span>
                   <div>
                     <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--text-primary)', marginBottom: 2 }}>{step.title}</div>
                     <div style={{ fontSize: 12, color: 'var(--text-muted)' }}>{step.desc}</div>
@@ -409,7 +424,7 @@ export default function CheckTransaction() {
           </Card>
 
           {/* Risk Legend */}
-          <Card title="🎨 Risk Level Legend">
+          <Card title="Risk Level Legend">
             <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
               {[
                 { level: 'high',   pct: '>70%',  desc: 'Very likely fraud. Immediate review.' },

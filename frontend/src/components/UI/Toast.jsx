@@ -5,6 +5,7 @@
  */
 
 import React, { createContext, useContext, useState, useCallback } from 'react';
+import { CheckCircle, AlertCircle, Info, AlertTriangle } from 'lucide-react';
 
 // ── Context ────────────────────────────────────────────────────────────────────
 const ToastContext = createContext(null);
@@ -68,10 +69,10 @@ export function ToastProvider({ children }) {
 // ── Single Toast Item ──────────────────────────────────────────────────────────
 function ToastItem({ toast, onClose }) {
   const icons = {
-    success: '',
-    error:   '❌',
-    info:    'ℹ️',
-    warning: '',
+    success: <CheckCircle size={16} color="var(--success)" />,
+    error:   <AlertCircle size={16} color="var(--danger)" />,
+    info:    <Info size={16} color="var(--accent-blue)" />,
+    warning: <AlertTriangle size={16} color="var(--warning)" />,
   };
 
   return (

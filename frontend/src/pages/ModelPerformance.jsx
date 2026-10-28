@@ -153,11 +153,11 @@ export default function ModelComparison() {
       </div>
 
       <div className="page-header" style={{ marginBottom: 32, marginTop: 40 }}>
-        <h2 className="page-title">🎯 Production Model ({metricsData.model_name})</h2>
+        <h2 className="page-title">Production Model ({metricsData.model_name})</h2>
       </div>
 
       <div className="charts-grid mb-28">
-        <Card title="🧮 Confusion Matrix">
+        <Card title="Confusion Matrix">
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, height: '100%', alignItems: 'center' }}>
             <div style={{ background: 'rgba(16, 185, 129, 0.08)', padding: '24px 20px', borderRadius: 12, border: '1px solid rgba(16, 185, 129, 0.3)', textAlign: 'center' }}>
               <div style={{ color: 'var(--text-primary)', fontSize: 14, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 4 }}>True Negatives</div>

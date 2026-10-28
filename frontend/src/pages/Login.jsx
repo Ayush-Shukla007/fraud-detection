@@ -75,7 +75,7 @@ export default function Login() {
               disabled={loading}
               style={{ flex: 1, padding: '10px', fontSize: '13px' }}
             >
-              🚀 Admin Demo
+              Admin Demo
             </button>
             <button 
               type="button"
@@ -84,7 +84,7 @@ export default function Login() {
               disabled={loading}
               style={{ flex: 1, padding: '10px', fontSize: '13px' }}
             >
-              👁️ Viewer Demo
+              Viewer Demo
             </button>
           </div>
         </div>

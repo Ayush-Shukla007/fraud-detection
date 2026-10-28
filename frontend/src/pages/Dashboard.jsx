@@ -188,7 +188,7 @@ export default function Dashboard() {
           </div>
         </Card>
 
-        <Card title={`🍩 Distribution`}>
+        <Card title="Distribution">
           <div className="chart-container" style={{ height: 350, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <ResponsiveContainer width="100%" height="100%">
               <PieChart>

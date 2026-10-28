@@ -13,6 +13,7 @@ import DataTable from '../components/UI/DataTable';
 import Badge from '../components/UI/Badge';
 import { analyzeBatchTransactions } from '../services/api';
 import { useToast } from '../components/UI/Toast';
+import { UploadCloud, FileText, FolderOpen } from 'lucide-react';
 
 const PIE_COLORS = ['#ef4444', '#10b981'];
 
@@ -173,15 +174,15 @@ export default function BatchDetection() {
   return (
     <div>
       {/* ── Upload Card ── */}
-      <Card title=" Upload Transactions CSV" className="mb-20">
+      <Card title="Upload Transactions CSV" className="mb-20">
         {/* Dropzone */}
         <div
           {...getRootProps()}
           className={`dropzone ${isDragActive ? 'active' : ''} ${file ? 'has-file' : ''}`}
         >
           <input {...getInputProps()} />
-          <div className="dropzone-icon">
-            {file ? '📄' : isDragActive ? '📂' : '☁️'}
+          <div className="dropzone-icon" style={{ display: 'flex', justifyContent: 'center', marginBottom: 12 }}>
+            {file ? <FileText size={42} color="var(--success)" /> : isDragActive ? <FolderOpen size={42} color="var(--accent-blue)" /> : <UploadCloud size={42} color="var(--text-muted)" />}
           </div>
           {file ? (
             <>
@@ -300,7 +301,7 @@ export default function BatchDetection() {
             </Card>
 
             {/* Pie Chart */}
-            <Card title="🍩 Fraud Distribution">
+            <Card title="Fraud Distribution">
               <div style={{ height: 260 }}>
                 <ResponsiveContainer width="100%" height="100%">
                   <PieChart>

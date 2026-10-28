@@ -323,7 +323,6 @@ export default function TransactionHistory() {
           data={pageData}
           loading={loading}
           emptyMessage={allData.length === 0 ? 'No transaction history yet' : 'No results match your filters'}
-          emptyIcon={allData.length === 0 ? '📭' : ''}
           emptyDescription={
             allData.length === 0
               ? 'Analyze a transaction or run a batch job to see results here.'
